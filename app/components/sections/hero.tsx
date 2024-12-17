@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import background from './placeholder.svg'
 
 export default function Hero() {
   return (
@@ -10,7 +11,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60" />
       
       <Image
-        src="/placeholder.svg?height=1080&width=1920"
+        // src="/placeholder.svg?height=1080&width=1920"
+        src={background}
         alt="Industrial machinery background"
         fill
         priority
@@ -25,7 +27,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span>Jamnagar's </span>
+            <span>Jamnagar&apos;s </span>
             <span className="text-orange-500">Leading Alloy Steel Stokist</span>
             <span className="block mt-2">Since 1968</span>
           </motion.h1>

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import logo from './images/logo.png'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -22,7 +23,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src={logo}
               alt="NSC Logo"
               width={120}
               height={40}
