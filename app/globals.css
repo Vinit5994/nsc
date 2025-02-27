@@ -2,10 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Custom styles for the contact section */
+input::placeholder,
+textarea::placeholder {
+  color: #6B7280;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.text-orange-500 {
+  color: #f97316;
+}
+
+.border-orange-500 {
+  border-color: #f97316;
+}
+
+.bg-orange-500 {
+  background-color: #f97316;
+}
+
+.hover\:bg-orange-50:hover {
+  background-color: #fff7ed;
 }
 
 body {

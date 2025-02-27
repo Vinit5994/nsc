@@ -1,17 +1,17 @@
 "use client"
 import { useState } from "react";
 import Image from "next/image";
-import product from "../sections/product.svg";
-
-export default function ProductPage() {
+import product from "../../../public/assets/images/product.svg";
+import ProductCatalog from "../../productContent.json";
+export default function ProductPage(props: any) {
   const [selectedType, setSelectedType] = useState("Leaded");
   const [selectedShape, setSelectedShape] = useState("Round");
-
+console.log(ProductCatalog,props)
   const handleGetRates = () => {
     const message = `Hello, I am interested in getting rates for EN1A steel with the following details:
     - Type: ${selectedType}
     - Shape: ${selectedShape}`;
-    const whatsappUrl = `https://wa.me/<YOUR_WHATSAPP_NUMBER>?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+917567170037?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

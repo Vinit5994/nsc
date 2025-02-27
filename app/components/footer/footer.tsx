@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import logo from '../layout/images/logo.png'
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="block w-[180px]">
             <Image
-              src="/placeholder.svg?height=60&width=180"
+              src={logo}
               alt="NSC Logo"
               width={180}
               height={60}

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import QuoteForm from "@/app/components/specificProduct/QuoteForm";
 
 export default function ProductDetails() {
   const [activeTab, setActiveTab] = useState('Description')
@@ -108,6 +109,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
+      <QuoteForm/>
     </div>
   )
 }
