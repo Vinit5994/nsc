@@ -1,14 +1,52 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import product from "../../../public/assets/images/product.svg";
-import ProductCatalog from "../../productContent.json";
-export default function ProductPage(props: any) {
-  const [selectedType, setSelectedType] = useState("Leaded");
-  const [selectedShape, setSelectedShape] = useState("Round");
-console.log(ProductCatalog,props)
+import { useSearchParams, useParams } from "next/navigation";
+import productData from "../../productContent.json";
+
+export default function ProductPage() {
+  // Get product name from URL path parameter
+  const params = useParams();
+  const urlName = params.product || ""; // Default to en1a if no URL name is provided
+  console.log(urlName);
+  // Find the product from catalog based on URL parameter
+  const product = productData.materials.find(p => p.urlName === urlName) || productData.materials[0];
+  
+  // Define possible product types and shapes based on the product
+  const productTypes = {
+    "en1a": ["Leaded", "Non-Leaded"],
+    "stainless-steel": ["303","304", "316", "410", "416","430F"],
+    "hot-die": ["H13"],
+    "wps": ["D2", "D3"],
+    "en-series": ["EN8", "EN19", "EN31", "EN36"],
+    "ms-bright": ["1018", "1020","1010"]
+  };
+  
+  const productShapes = { 
+    "en1a": ["Round", "Square", "Flat", "Hex"],
+    "stainless-steel": ["Round", "Square", "Hex"],
+    "hot-die": ["Round", "Square"],
+    "wps": ["Round", "Square", "Flat"],
+    "en-series": ["Round", "Square", "Flat", "Hex"],
+    "ms-bright": ["Round", "Square", "Flat"]
+  };
+  
+  // Get the appropriate types and shapes for this product
+  const types = productTypes[urlName as keyof typeof productTypes] || ["Standard"];
+  const shapes = productShapes[urlName as keyof typeof productShapes] || ["Round"];
+  
+  // Initialize state with the first options
+  const [selectedType, setSelectedType] = useState(types[0]);
+  const [selectedShape, setSelectedShape] = useState(shapes[0]);
+  
+  // Update selected options when product changes
+  useEffect(() => {
+    setSelectedType(types[0]);
+    setSelectedShape(shapes[0]);
+  }, [urlName]);
+
   const handleGetRates = () => {
-    const message = `Hello, I am interested in getting rates for EN1A steel with the following details:
+    const message = `Hello, I am interested in getting rates for ${product.title} with the following details:
     - Type: ${selectedType}
     - Shape: ${selectedShape}`;
     const whatsappUrl = `https://wa.me/+917567170037?text=${encodeURIComponent(message)}`;
@@ -20,14 +58,14 @@ console.log(ProductCatalog,props)
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full overflow-hidden">
         <Image
-          src={product}
-          alt="Steel bars background"
+          src={product.image || "/assets/images/product.svg"}
+          alt={`${product.title} background`}
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-9xl font-bold text-orange-500">EN1A</h1>
+          <h1 className="text-9xl font-bold text-orange-500">{product.title.split(' ')[0]}</h1>
         </div>
       </section>
 
@@ -38,8 +76,8 @@ console.log(ProductCatalog,props)
             {/* Product Image */}
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src={product}
-                alt="EN1A Steel bars close up"
+                src={product.image || "/assets/images/product.svg"}
+                alt={`${product.title} close up`}
                 width={610}
                 height={610}
                 className="object-cover"
@@ -49,21 +87,19 @@ console.log(ProductCatalog,props)
             {/* Product Details */}
             <div className="space-y-6 text-black w-[80%]">
               <h2 className="text-5xl top-5 font-bold">
-                Leaded
+                {selectedType}
                 <div className="mt-2 h-1 w-16 bg-orange-500" />
               </h2>
 
               <p className="text-xl">
-                EN1A leaded steel is a low-carbon steel alloy with improved machinability due to
-                added lead. It offers smoother finishes, longer tool life, and faster production.
-                Ideal for high-volume machining of complex parts.
+                {product.description}
               </p>
 
               {/* Type Selection */}
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold">Type</h3>
-                <div className="flex gap-4">
-                  {["Leaded", "Non-Leaded"].map((type) => (
+                <div className="flex flex-wrap gap-4">
+                  {types.map((type) => (
                     <span
                       key={type}
                       className={`cursor-pointer border-b-2 pb-1 font-medium ${
@@ -82,8 +118,8 @@ console.log(ProductCatalog,props)
               {/* Shape Selection */}
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold">Shape</h3>
-                <div className="flex gap-4">
-                  {["Round", "Square", "Flat", "Hex"].map((shape) => (
+                <div className="flex flex-wrap gap-4">
+                  {shapes.map((shape) => (
                     <span
                       key={shape}
                       className={`cursor-pointer border-b-2 pb-1 font-medium ${
@@ -98,6 +134,18 @@ console.log(ProductCatalog,props)
                   ))}
                 </div>
               </div>
+
+              {/* Who can use it section */}
+              {product.subTitle && (
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">{product.subTitle}</h3>
+                  <ul className="list-disc pl-5">
+                    {product.subDescription.map((item, index) => (
+                      <li key={index} className="text-gray-700">{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Get Rates Button */}
               <button

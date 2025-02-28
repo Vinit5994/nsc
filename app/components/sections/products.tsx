@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 
 export default function ProductCatalog({products}) {
+  console.log(products);
   return (
     <section className="py-24 px-4 bg-white">
 
@@ -20,7 +21,7 @@ export default function ProductCatalog({products}) {
                 className="rounded-2xl"
               />
               <Link 
-                href="/products/en1a"
+                href={`/products/${product.urlName}`}
                 className="absolute bottom-4 right-32 bg-white text-gray-900 px-4 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-white transition-colors"
               >
                 View Product

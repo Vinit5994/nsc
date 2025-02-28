@@ -48,7 +48,7 @@ export default function ProductTwo({ products }) {
               className="object-cover rounded-2xl"
             />
             <Link
-              href="/products/stainless-steel"
+              href={`/products/${product.urlName}`}
               className="absolute bottom-24 right-44 bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-white transition-colors"
             >
               View Product

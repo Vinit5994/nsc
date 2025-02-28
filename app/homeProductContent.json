@@ -1,6 +1,6 @@
 {
     "materials": [
-        {
+        {   "urlName":"en1a",
             "title": "EN1A (Leaded & Non Leaded)",
             "description": "EN1A is a bright mild steel renowned for its low carbon content. This steel's exceptional machinability makes it an ideal choice for high-volume production scenarios where efficiency and precision are paramount.",
             "subTitle": "Who can use it",
@@ -12,7 +12,7 @@
             ],
             "image":"/assets/images/en1a-round.png"
         },
-        {
+        {   "urlName":"stainless-steel",
             "title": "Stainless Steel",
             "description": "Stainless steel bright bars are smooth, shiny, and corrosion-resistant bars made by cold drawing. They have precise shapes, strong welds, and are easy to machine, making them versatile for many uses.",
             "subTitle": "Who can use it",
@@ -24,7 +24,7 @@
             ],
             "image":"/assets/images/stainless-steel.png"
         },
-        {
+        {   "urlName":"hot-die",
             "title": "Hot Die Steel",
             "description": "Hot Die Steels is known for their durability and load-bearing ability. These high-quality products are used in various applications, including forged dies, die casting dies, aluminum extrusion dies, bolt dies, hot piercing punches, and forming punches.",
             "subTitle": "Who can use it",

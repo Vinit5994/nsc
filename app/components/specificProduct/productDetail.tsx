@@ -42,22 +42,17 @@ export default function ProductDetails() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-6 text-gray-800">
           <p className="text-lg leading-relaxed">
-            EN1A (also known as BS 970 230M07) is bright Mild Steel noted for its low carbon content. This Steel is
-            especially good for free cutting, where a large volume of products are required.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur commodi inventore veritatis laboriosam. Expedita sit quam voluptatibus possimus, consequatur, quis nam unde voluptate dignissimos rerum repellat, ipsum earum eos optio.
           </p>
           <p className="text-lg leading-relaxed">
-            It can be formed by rolling or drawing and the machining of EN1A is fine of both automatic and CNC
-            machines.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi veniam recusandae similique, atque architecto quod ipsam delectus assumenda quisquam vitae obcaecati soluta molestiae odio illo? Explicabo harum molestiae rem optio.
           </p>
           <p className="text-lg leading-relaxed">
-            Compared to regular mild Steel, bright mild steel provides tighter sectional tolerances, increased
-            straightness, and a much cleaner surface. The main advantage of cold drawn Steel is that Steel can be
-            brought closer to the finished machine size, providing reduces machining costs. Another benefit of
-            bright Steel bars is a marked increase in physical strength over hot rolled bars of the same section.
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dignissimos labore cupiditate consequatur temporibus cum sapiente iure, commodi, rem a laborum ipsa iste vitae omnis quia nulla amet explicabo repellat!
           </p>
         </div>
 
-        {/* Other Ranges Section */}
+        Other Ranges Section
         <div className="mt-16 py-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="space-y-4">
