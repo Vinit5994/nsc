@@ -9,11 +9,45 @@ export default function ContactSection() {
     requirement: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+// Handle form submission to WhatsApp
+const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  // Validate form
+  if (!formData.name || !formData.phone || !formData.requirement) {
+    alert('Please fill in all fields');
+    return;
   }
+  
+  // Format message for WhatsApp
+  const message = `
+*New Steel Quote Request*
+-------------------
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Requirement:* ${formData.requirement}
+-------------------
+`;
+  
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // You can replace this with your business phone number
+  const phoneNumber = '+917567170037'; // Add your WhatsApp business number here
+  
+  // Create WhatsApp URL
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+  // Open WhatsApp in a new tab
+  window.open(whatsappURL, '_blank');
+  
+  // Optional: Reset form after submission
+  setFormData({
+    name: '',
+    phone: '',
+    requirement: ''
+  });
+};
 
   return (
     <div className="bg-white">
