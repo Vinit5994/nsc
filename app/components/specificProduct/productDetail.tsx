@@ -1,18 +1,27 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
+import { useState } from "react";
+import { useParams } from "next/navigation"; // Import useParams to get the dynamic route parameter
+import Image from "next/image";
 import QuoteForm from "@/app/components/specificProduct/QuoteForm";
+import productContent from "@/app/productContent.json";
 
 export default function ProductDetails() {
-  const [activeTab, setActiveTab] = useState('Description')
-  const [activeSlide, setActiveSlide] = useState(0)
-
-  const tabs = ['Description', 'Uses', 'Certifications']
+  const [activeTab, setActiveTab] = useState("Description");
+  const [activeSlide, setActiveSlide] = useState(0);
+  const tabs = ["Description", "Uses"];
   const slides = [
     { id: 1, image: "/hex-bars-1.jpg" },
     { id: 2, image: "/hex-bars-2.jpg" },
-  ]
+  ];
+
+  const params = useParams();
+  const productSlug = params?.product; // Get 'stainless-steel' from URL
+
+  // Find matching product based on urlName
+  const material = productContent.materials.find(
+    (material) => material.urlName.toLowerCase() === productSlug
+  );
 
   return (
     <div className="bg-white">
@@ -25,7 +34,9 @@ export default function ProductDetails() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`relative px-4 py-4 text-lg font-medium transition-colors ${
-                  activeTab === tab ? 'text-orange-500' : 'text-gray-500 hover:text-gray-700'
+                  activeTab === tab
+                    ? "text-orange-500"
+                    : "text-gray-500 hover:text-gray-700"
                 }`}
               >
                 {tab}
@@ -41,18 +52,35 @@ export default function ProductDetails() {
       {/* Content Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-6 text-gray-800">
-          <p className="text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur commodi inventore veritatis laboriosam. Expedita sit quam voluptatibus possimus, consequatur, quis nam unde voluptate dignissimos rerum repellat, ipsum earum eos optio.
-          </p>
-          <p className="text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi veniam recusandae similique, atque architecto quod ipsam delectus assumenda quisquam vitae obcaecati soluta molestiae odio illo? Explicabo harum molestiae rem optio.
-          </p>
-          <p className="text-lg leading-relaxed">
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dignissimos labore cupiditate consequatur temporibus cum sapiente iure, commodi, rem a laborum ipsa iste vitae omnis quia nulla amet explicabo repellat!
-          </p>
+          {activeTab === "Description" && (
+            <p className="text-lg leading-relaxed">
+              {material?.description2 || "No description available"}
+            </p>
+          )}
+
+          {activeTab === "Uses" && (
+            <div>
+              {/* <h2 className="text-2xl font-semibold">Uses</h2> */}
+              <ul className="list-disc pl-6 text-lg text-gray-700">
+                {material?.useCase?.length > 0 ? (
+                  material.useCase.map((use, index) => (
+                    <li key={index}>{use}</li>
+                  ))
+                ) : (
+                  <li>No use cases available</li>
+                )}
+              </ul>
+            </div>
+          )}
+
+          {/* {activeTab === "Certifications" && (
+            <p className="text-lg leading-relaxed">
+              {material?.certifications || "No certifications available"}
+            </p>
+          )} */}
         </div>
 
-        Other Ranges Section
+        {/* Other Ranges Section */}
         <div className="mt-16 py-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="space-y-4">
@@ -68,14 +96,14 @@ export default function ProductDetails() {
                 for Every Industry
               </p>
             </div>
-            
+
             <div className="relative">
               <div className="flex gap-4 overflow-hidden">
                 {slides.map((slide, index) => (
                   <div
                     key={slide.id}
                     className={`relative aspect-square w-full shrink-0 rounded-lg bg-[#B2E4ED] transition-transform duration-300 ease-in-out ${
-                      index === activeSlide ? 'translate-x-0' : 'translate-x-full'
+                      index === activeSlide ? "translate-x-0" : "translate-x-full"
                     }`}
                   >
                     <Image
@@ -95,7 +123,7 @@ export default function ProductDetails() {
                     key={index}
                     onClick={() => setActiveSlide(index)}
                     className={`h-2 w-2 rounded-full transition-colors ${
-                      index === activeSlide ? 'bg-orange-500' : 'bg-gray-300'
+                      index === activeSlide ? "bg-orange-500" : "bg-gray-300"
                     }`}
                   />
                 ))}
@@ -104,8 +132,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-      <QuoteForm/>
+      <QuoteForm />
     </div>
-  )
+  );
 }
-

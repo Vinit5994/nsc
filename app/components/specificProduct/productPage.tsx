@@ -61,11 +61,11 @@ export default function ProductPage() {
           src={product.image || "/assets/images/product.svg"}
           alt={`${product.title} background`}
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-25"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-9xl font-bold text-orange-500">{product.title.split(' ')[0]}</h1>
+          <h1 className="text-8xl font-bold text-orange-500">{product.title}</h1>
         </div>
       </section>
 

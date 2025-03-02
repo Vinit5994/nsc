@@ -17,7 +17,7 @@ export default function ProductPage() {
     src={product}
     alt="Steel bars background"
     fill
-    className="object-cover opacity-60"
+    className="object-cover opacity-25"
     priority
   />
 

@@ -3,11 +3,13 @@
       
       { "index": 0,
         "urlName":"en1a",
-        "title": "EN1A (Leaded & Non Leaded)",
+        "title": "EN1A",
         "description": "EN1A is a bright mild steel renowned for its low carbon content. This steel's exceptional machinability makes it an ideal choice for high-volume production scenarios where efficiency and precision are paramount.",
         "subTitle": "Who can use it",
         "subDescription": ["Industrial manufacturers","Equipment designers","Defense contractors","Automotive technicians"],
-        "image" :"/assets/images/en1a-round.png"
+        "image" :"/assets/images/en1a-round.png",
+        "description2":"EN1A is a low carbon, free-machining steel known for its excellent machinability, making it ideal for high-volume production of small parts. It contains added sulfur and/or lead to enhance its cutting properties. It is easy to work with, resulting in reduced tool wear and faster production cycles. However, EN1A is generally not recommended for applications requiring high strength or welding.",
+        "useCase":["Automotive Components: Bolts, nuts, studs, screws, bushes, and other fasteners.","General Engineering: Pins, shafts, gears (lightly loaded), and other small machine components.","Electrical Components: Terminals, connectors, and other precision parts.","Precision Machined Parts: Where tight tolerances and smooth finishes are required."]
       },
       {"index": 1,
         "urlName":"stainless-steel",
@@ -15,7 +17,9 @@
         "description": "Stainless steel bright bars are smooth, shiny, and corrosion-resistant bars made by cold drawing. They have precise shapes, strong welds, and are easy to machine, making them versatile for many uses.",
         "subTitle": "Who can use it",
         "subDescription": ["Consumer goods manufacturers","Food and beverage industry","Medical and surgical equipment","Chemical and petrochemical industry"],
-        "image":"/assets/images/stainless-steel.png"
+        "image":"/assets/images/stainless-steel.png",
+        "description2":"Stainless steel is a versatile alloy known for its corrosion resistance, durability, and aesthetic appeal. It contains a minimum of 10.5% chromium, which forms a passive layer on the surface, protecting the steel from rust and staining. Different grades of stainless steel offer varying levels of corrosion resistance, strength, and heat resistance, making it suitable for a wide range of applications. Provide subcategories for specific grades you offer (e.g., 304, 316, 410). Mention the specific grades you supply.",
+        "useCase":["Food Processing Equipment: Tanks, pipes, utensils, and surfaces.","Medical Instruments: Surgical tools, implants, and equipment.","Chemical Processing: Reactors, storage tanks, and piping systems.","Architectural Applications: Cladding, railings, and decorative elements.","Automotive Industry: Exhaust systems, trim, and structural components.","Marine Applications: Boat fittings, fasteners, and hardware."]
       },
       {"index": 2,
         "urlName":"hot-die",
@@ -23,7 +27,9 @@
         "description": "Hot Die Steels is known for their durability and load-bearing ability. These high-quality products are used in various applications, including forged dies, die casting dies, aluminum extrusion dies, bolt dies, hot piercing punches, and forming punches.",
         "subTitle": "Who can use it",
         "subDescription": ["Consumer goods manufacturers","Food and beverage industry","Medical and surgical equipment","Chemical and petrochemical industry"],
-        "image":"/assets/images/hot-die.png"
+        "image":"/assets/images/hot-die.png",
+        "description2":"Hot die steel is a class of high-alloy tool steel designed to withstand the extreme temperatures, pressures, and abrasive conditions encountered in hot working processes. These steels exhibit excellent toughness, wear resistance, and resistance to heat checking (surface cracking due to thermal cycling). They are typically heat treated to achieve the desired hardness and strength.",
+        "useCase":["Forging Dies: For drop forging, press forging, and upset forging.","Extrusion Dies: For hot extrusion of metals like aluminum and copper.","Die Casting Dies: For high-pressure casting of metals like aluminum, zinc, and magnesium.","Hot Shearing Blades: For cutting hot metal.","Hot Punches and Piercing Tools: For forming holes in hot metal."]
 
       },
       {"index": 3,  
@@ -32,7 +38,9 @@
         "description": "WPS is a high-performance tool steel with exceptional wear resistance and deep hardening capabilities. Its high hardness and compressive strength make it ideal for tools requiring maximum durability and accuracy.",
         "subTitle": "Who can use it",
         "subDescription": ["Manufacturers of cutting tools","Automotive and aerospace industries","Tool and mold makers","Machine tool manufacturers"],
-        "image":"/assets/images/wps.png"
+        "image":"/assets/images/wps.png",
+        "description2":"WPS is a high-carbon, high-chromium tool steel known for its excellent wear resistance, toughness, and dimensional stability. It is air-hardening, which means it achieves high hardness levels without the need for oil quenching. WPS is commonly used for cutting and forming tools, dies, and punches in applications requiring high wear resistance and dimensional stability. It is available in various grades, including D2 and D3, which offer different levels of wear resistance and toughness.",
+        "useCase":["Cutting Tools: End mills, drills, reamers, taps, and broaches.","Cold Work Tools: Blanking dies, forming dies, and punches.","Hot Work Tools: Die casting dies, extrusion dies, and forging dies.","Plastic Molding Tools: Injection molds, blow molds, and extrusion dies."]
       },
       { "index": 4,
         "urlName":"en-series",
@@ -40,7 +48,9 @@
         "description": "Our EN Series steels provide a versatile selection of high-quality materials for various industrial applications. Key grades like EN8 and EN9 excel in strength and machinability, while EN19 and EN24 offer exceptional toughness for heavy-duty use.",
         "subTitle": "Who can use it",
         "subDescription": ["Heavy machinery producers","Toolmakers","Construction firms","Aerospace industries"],
-        "image":"/assets/images/en-series.png"
+        "image":"/assets/images/en-series.png",
+        "description2":"EN series steels are a range of engineering steels that are defined by the British Standard (BS EN). This series covers a variety of alloy and carbon steels with different properties and applications. They are widely used in general engineering, automotive, and manufacturing industries. Specify the grades you offer within this series.",
+        "useCase":["Shafts and Axles: For automotive and industrial machinery.","Gears and Sprockets: For power transmission systems.","Connecting Rods: For engines and machinery.","Fasteners: Bolts, nuts, and studs.","Machine Components: Pins, bushings, and spindles."]
       },
       {"index": 5,
         "urlName":"ms-bright",
@@ -48,7 +58,9 @@
         "description": "MS Brightbar is a high-quality mild steel with a smooth surface and precise dimensions. Ideal for components like shafts and brackets, it offers durability and improved tolerances for precision engineering.",
         "subTitle": "Who can use it",
         "subDescription":[ "Fabricators","Engineering Firms","Construction companies"],
-        "image":"/assets/images/ms-bright.png"
+        "image":"/assets/images/ms-bright.png",
+        "description2":"MS Bright Bar (Mild Steel Bright Bar) is a general-purpose low-carbon steel that has been cold-finished to achieve a smooth, bright, and precise surface. The cold-finishing process improves the dimensional accuracy, straightness, and surface finish compared to hot-rolled mild steel. It's easy to machine and weld, making it a versatile material for a wide range of applications.",
+        "useCase":["Shafts and Spindles: For machinery and equipment.","Fasteners: Bolts, screws, and studs.","Brackets and Supports: For construction and engineering projects.","Automotive Components: Bushings, pins, and small parts."]
       }
     ]
   }
