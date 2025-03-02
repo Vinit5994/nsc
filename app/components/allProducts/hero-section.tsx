@@ -12,17 +12,22 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full overflow-hidden">
-        <Image
-          src={product}
-          alt="Steel bars background"
-          fill
-          className="object-cover"
-          priority
-        />
+      <section className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] w-full overflow-hidden">
+  <Image
+    src={product}
+    alt="Steel bars background"
+    fill
+    className="object-cover opacity-60"
+    priority
+  />
+
+
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-9xl font-bold text-orange-500">Catalogue</h1>
-        </div>
+  <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-orange-500">
+    Catalogue
+  </h1>
+</div>
+
       </section>
       <AlternatingProducts oddProducts={oddProducts} evenProducts={evenProducts}/>
 

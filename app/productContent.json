@@ -1,20 +1,24 @@
 {
     "materials": [
-      { "urlName":"en1a",
+      
+      { "index": 0,
+        "urlName":"en1a",
         "title": "EN1A (Leaded & Non Leaded)",
         "description": "EN1A is a bright mild steel renowned for its low carbon content. This steel's exceptional machinability makes it an ideal choice for high-volume production scenarios where efficiency and precision are paramount.",
         "subTitle": "Who can use it",
         "subDescription": ["Industrial manufacturers","Equipment designers","Defense contractors","Automotive technicians"],
         "image" :"/assets/images/en1a-round.png"
       },
-      {"urlName":"stainless-steel",
+      {"index": 1,
+        "urlName":"stainless-steel",
         "title": "Stainless Steel",
         "description": "Stainless steel bright bars are smooth, shiny, and corrosion-resistant bars made by cold drawing. They have precise shapes, strong welds, and are easy to machine, making them versatile for many uses.",
         "subTitle": "Who can use it",
         "subDescription": ["Consumer goods manufacturers","Food and beverage industry","Medical and surgical equipment","Chemical and petrochemical industry"],
         "image":"/assets/images/stainless-steel.png"
       },
-      {"urlName":"hot-die",
+      {"index": 2,
+        "urlName":"hot-die",
         "title": "Hot Die Steel",
         "description": "Hot Die Steels is known for their durability and load-bearing ability. These high-quality products are used in various applications, including forged dies, die casting dies, aluminum extrusion dies, bolt dies, hot piercing punches, and forming punches.",
         "subTitle": "Who can use it",
@@ -22,21 +26,24 @@
         "image":"/assets/images/hot-die.png"
 
       },
-      {"urlName":"wps",
+      {"index": 3,  
+        "urlName":"wps",
         "title": "WPS (D2 & D3)",
         "description": "WPS is a high-performance tool steel with exceptional wear resistance and deep hardening capabilities. Its high hardness and compressive strength make it ideal for tools requiring maximum durability and accuracy.",
         "subTitle": "Who can use it",
         "subDescription": ["Manufacturers of cutting tools","Automotive and aerospace industries","Tool and mold makers","Machine tool manufacturers"],
         "image":"/assets/images/wps.png"
       },
-      {"urlName":"en-series",
+      { "index": 4,
+        "urlName":"en-series",
         "title": "EN Series",
         "description": "Our EN Series steels provide a versatile selection of high-quality materials for various industrial applications. Key grades like EN8 and EN9 excel in strength and machinability, while EN19 and EN24 offer exceptional toughness for heavy-duty use.",
         "subTitle": "Who can use it",
         "subDescription": ["Heavy machinery producers","Toolmakers","Construction firms","Aerospace industries"],
         "image":"/assets/images/en-series.png"
       },
-      {"urlName":"ms-bright",
+      {"index": 5,
+        "urlName":"ms-bright",
         "title": "MS Brightbar",
         "description": "MS Brightbar is a high-quality mild steel with a smooth surface and precise dimensions. Ideal for components like shafts and brackets, it offers durability and improved tolerances for precision engineering.",
         "subTitle": "Who can use it",

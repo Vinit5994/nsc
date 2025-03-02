@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../layout/images/logo.png'
+import productContent from '../../productContent.json'
 
 export default function Footer() {
   return (
@@ -21,17 +22,10 @@ export default function Footer() {
         <div className="space-y-4">
           <h2 className="text-orange-500 text-lg font-medium">PRODUCTS</h2>
           <ul className="space-y-2">
-            {[
-              'Alloy Steel',
-              'Stainless Steel',
-              'Hot Die Steel',
-              'EN Series',
-              'EN1A',
-              'ENAL'
-            ].map((item) => (
-              <li key={item}>
-                <Link href={`/products/${item.toLowerCase().replace(' ', '-')}`} className="hover:text-orange-500 transition-colors">
-                  {item}
+            {productContent.materials.map((item) => (
+              <li key={item.index}>
+                <Link href={`/products/${item.urlName}`} className="hover:text-orange-500 transition-colors">
+                  {item.title}
                 </Link>
               </li>
             ))}
