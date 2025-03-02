@@ -14,7 +14,7 @@ export default function ProductTwo({ products }) {
     <div className="bg-white overflow-hidden">
       {products.map((product,index) => (
         <div  key={product.id || index} className="grid md:grid-cols-2 items-stretch">
-          <div className="p-24 bg-[#FDF6F4] rounded-r-3xl space-y-8 w-[140%]">
+          <div className="p-24 bg-[#FDF6F4] rounded-r-3xl space-y-8 w-[140%] max-sm:p-10">
             <div className="space-y-2">
               <h2 className="text-[32px] leading-tight font-bold text-gray-900">
                 {product.title}
@@ -39,8 +39,8 @@ export default function ProductTwo({ products }) {
             </div>
           </div>
 
-          <div className="relative flex justify-center items-center ">
-            <Image
+          <div className="relative group w-[510px] h-[510px] max-sm:w-auto max-sm:h-auto p-4">
+          <Image
               src={product.image}
               alt="Stainless Steel Brightbar"
               width={510}
@@ -49,8 +49,8 @@ export default function ProductTwo({ products }) {
             />
             <Link
               href={`/products/${product.urlName}`}
-              className="absolute bottom-24 right-44 bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-white transition-colors"
-            >
+              className="absolute bottom-8 right-8 flex justify-center items-center bg-white text-gray-900 px-4 py-2 rounded-[8px] font-bold hover:bg-orange-500 hover:text-white transition-colors max-sm:left-1/2 max-sm:-translate-x-1/2 w-[200px] h-[40px] max-sm:text-center "
+              >
               View Product
             </Link>
           </div>
