@@ -5,15 +5,12 @@ import { useParams } from "next/navigation"; // Import useParams to get the dyna
 import Image from "next/image";
 import QuoteForm from "@/app/components/specificProduct/QuoteForm";
 import productContent from "@/app/productContent.json";
+import Link from "next/link";
 
 export default function ProductDetails() {
   const [activeTab, setActiveTab] = useState("Description");
   const [activeSlide, setActiveSlide] = useState(0);
   const tabs = ["Description", "Uses"];
-  const slides = [
-    { id: 1, image: "/hex-bars-1.jpg" },
-    { id: 2, image: "/hex-bars-2.jpg" },
-  ];
 
   const params = useParams();
   const productSlug = params?.product; // Get 'stainless-steel' from URL
@@ -22,6 +19,11 @@ export default function ProductDetails() {
   const material = productContent.materials.find(
     (material) => material.urlName.toLowerCase() === productSlug
   );
+
+  const otherRanges = productContent.materials
+    .filter((material) => material.urlName.toLowerCase() !== productSlug)
+    .slice(0, 2);
+  console.log(otherRanges, "otherRanges");
 
   return (
     <div className="bg-white">
@@ -81,16 +83,16 @@ export default function ProductDetails() {
         </div>
 
         {/* Other Ranges Section */}
-        <div className="mt-16 py-8">
+        <div className="mt-16 py-8  max-sm:p-[16px]">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="space-y-4">
+            <div className="flex flex-col justify-center items-center">
               <h2 className="text-4xl font-bold text-black">
                 VIEW OUR
                 <br />
                 OTHER RANGES
                 <div className="mt-2 h-1 w-16 bg-orange-500" />
               </h2>
-              <p className="text-xl text-gray-800">
+              <p className="text-xl text-gray-800 text-start w-[280px]">
                 Innovative Steel Solutions
                 <br />
                 for Every Industry
@@ -98,26 +100,36 @@ export default function ProductDetails() {
             </div>
 
             <div className="relative">
-              <div className="flex gap-4 overflow-hidden">
-                {slides.map((slide, index) => (
-                  <div
-                    key={slide.id}
-                    className={`relative aspect-square w-full shrink-0 rounded-lg bg-[#B2E4ED] transition-transform duration-300 ease-in-out ${
-                      index === activeSlide ? "translate-x-0" : "translate-x-full"
-                    }`}
+              <div className="flex gap-4 overflow-hidden max-sm:flex-col">
+                {otherRanges.map((slide, index) => (
+                  <Link
+                    key={index}
+                    href={`/products/${slide.urlName}`}
+                    className="w-[392px] h-[392px] flex gap-8 relative group overflow-hidden cursor-pointer"
                   >
                     <Image
                       src={slide.image}
                       alt="Steel hex bars"
-                      fill
-                      className="object-contain p-8"
+                      height={392}
+                      width={392}
+                      className="object-contain h-[392px] w-[392px]"
                     />
-                  </div>
+
+                    {/* Overlay (Hidden by default, appears on hover) */}
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                      <div className="flex flex-col items-center">
+                        <h2 className="text-3xl leading-[39px] font-bold text-black">
+                          {slide.title}
+                        </h2>
+                        <div className="mt-2 h-1 w-[185px] bg-orange-500" />
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
 
               {/* Dots Navigation */}
-              <div className="absolute -bottom-8 left-1/2 flex -translate-x-1/2 space-x-2">
+              {/* <div className="absolute -bottom-8 left-1/2 flex -translate-x-1/2 space-x-2">
                 {slides.map((_, index) => (
                   <button
                     key={index}
@@ -127,7 +139,7 @@ export default function ProductDetails() {
                     }`}
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
