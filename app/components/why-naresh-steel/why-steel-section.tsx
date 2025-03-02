@@ -58,10 +58,10 @@ export default function WhySteelSection() {
                 </section>
 
                 {/* Rating section with half white background */}
-                <div className="absolute bottom-0 left-0 w-full">
+                <div className="absolute bottom-0 left-0 w-full ">
                     <div className="h-1/2 bg-white absolute bottom-0 left-0 w-full"></div>
-                    <div className="max-w-7xl mx-auto relative justify-center flex top-[30px]">
-                        <div className="flex flex-wrap gap-8 justify-start">
+                    <div className="max-w-7xl mx-auto relative justify-center flex top-[30px] max-sm:top-[120px]">
+                        <div className="flex flex-wrap gap-8 justify-start max-sm:justify-center ">
                             <div className="bg-white rounded-lg p-6 shadow-lg flex items-center gap-4">
                                 <div className="bg-[#4285f4] text-white text-5xl font-bold p-6 rounded">
                                     5.0
