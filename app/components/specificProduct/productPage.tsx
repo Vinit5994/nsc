@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useSearchParams, useParams } from "next/navigation";
+import {  useParams } from "next/navigation";
 import productData from "../../productContent.json";
 
 export default function ProductPage() {

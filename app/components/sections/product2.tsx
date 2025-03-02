@@ -68,7 +68,7 @@ export default function ProductTwo({ products }) {
                 viewBox="0 0 52 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xlink="http://www.w3.org/1999/xlink"
+                // xlink="http://www.w3.org/1999/xlink"
               >
                 <g filter="url(#filter0_d_330_2282)">
                   <circle cx="26" cy="22" r="22" fill="white" />

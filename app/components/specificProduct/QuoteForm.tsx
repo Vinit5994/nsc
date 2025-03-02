@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState } from 'react'
 
 export default function QuoteForm() {
   const [formData, setFormData] = useState({
