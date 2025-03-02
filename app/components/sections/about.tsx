@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import aboutImage from './about.svg'
+import aboutImage from '../../../public/assets/images/aboutNsc.png'
 
 export default function About() {
   return (

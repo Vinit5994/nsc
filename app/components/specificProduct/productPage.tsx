@@ -45,6 +45,21 @@ export default function ProductPage() {
     setSelectedShape(shapes[0]);
   }, [urlName]);
 
+ // Get the appropriate image based on selected shape
+ const getShapeImage = () => {
+  if (selectedShape === "Round") {
+    return product.image ;
+  } else if (selectedShape === "Square") {
+    return "/assets/images/square.png";
+  } else if (selectedShape === "Flat") {
+    return "/assets/images/flat.png";
+  } else if (selectedShape === "Hex") {
+    return "/assets/images/hex.png";
+  }
+  // Default fallback
+  return product.image || "/assets/images/product.svg";
+};
+
   const handleGetRates = () => {
     const message = `Hello, I am interested in getting rates for ${product.title} with the following details:
     - Type: ${selectedType}
@@ -58,7 +73,7 @@ export default function ProductPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full overflow-hidden">
         <Image
-          src={product.image || "/assets/images/product.svg"}
+          src={product.image}
           alt={`${product.title} background`}
           fill
           className="object-cover opacity-25"
@@ -76,7 +91,7 @@ export default function ProductPage() {
             {/* Product Image */}
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src={product.image || "/assets/images/product.svg"}
+                src={getShapeImage()}
                 alt={`${product.title} close up`}
                 width={610}
                 height={610}

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import whySteel from './why-steel.png';
+import whySteel from '../../../public/assets/images/why-steel.png';
 import ContactSection from '../contact/contact-section';
 import justdial from '../../../public/assets/images/justdial.png';
 export default function WhySteelSection() {

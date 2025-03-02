@@ -6,15 +6,47 @@ export default function QuoteForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
-    projectBrief: ''
+    requirement: ''
   })
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.phone || !formData.requirement) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    // Format message for WhatsApp
+    const message = `
+  *New Steel Quote Request*
+  -------------------
+  *Name:* ${formData.name}
+  *Phone:* ${formData.phone}
+  *Requirement:* ${formData.requirement}
+  -------------------
+  `;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // You can replace this with your business phone number
+    const phoneNumber = '+917567170037'; // Add your WhatsApp business number here
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Optional: Reset form after submission
+    setFormData({
+      name: '',
+      phone: '',
+      requirement: ''
+    });
+  };
 
   return (
     <div className="max-w-7xl mx-auto p-6">
@@ -48,20 +80,20 @@ export default function QuoteForm() {
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             />
             
-            <input
+            {/* <input
               type="email"
               placeholder="Email I'd"
               className="w-full p-3 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            />
+            /> */}
             
             <textarea
-              placeholder="Project Brief..."
+              placeholder="Steel Requirement"
               rows={6}
               className="w-full p-3 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
-              value={formData.projectBrief}
-              onChange={(e) => setFormData({ ...formData, projectBrief: e.target.value })}
+              value={formData.requirement}
+              onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
             />
             
             <button
@@ -87,13 +119,18 @@ export default function QuoteForm() {
         {/* Contact Information */}
         <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
           <div>
-            <h3 className="text-orange-500 font-medium mb-2">Email Address</h3>
-            <p className="text-gray-700">abc234@gmail.com</p>
+            {/* <h3 className="text-orange-500 font-medium mb-2">Email Address</h3>
+            <p className="text-gray-700">abc234@gmail.com</p> */}
           </div>
           <div>
             <h3 className="text-orange-500 font-medium mb-2">Phone Number</h3>
-            <p className="text-gray-700">123 456 789</p>
-          </div>
+            <div className="grid grid-cols-2 gap-2 text-gray-600">
+                <a href="tel:+919426208737" className="hover:text-orange-500">+91 94262 08737</a>
+                <a href="tel:+917567170037" className="hover:text-orange-500">+91 75671 70037</a>
+                <a href="tel:+917600618737" className="hover:text-orange-500">+91 76006 18737</a>
+                <a href="tel:+918141005409" className="hover:text-orange-500">+91 81410 05409</a>
+              </div>         
+             </div>
         </div>
       </div>
     </div>
