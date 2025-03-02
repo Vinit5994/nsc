@@ -4,10 +4,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import logo from './images/logo.png'
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const handleScrollToContact = (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    router.push("/"); // Navigate to home first
+
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact-section");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500); // Delay to ensure page loads before scrolling
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -41,9 +54,11 @@ export default function Header() {
             <Link href="/products" className="text-white hover:text-orange-500 transition-colors">
               Products
             </Link>
-            <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition-colors">
+            <button       
+            onClick={handleScrollToContact}
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition-colors">
               Contact Us
-            </Link>
+            </button>
           </div>
         </div>
       </nav>

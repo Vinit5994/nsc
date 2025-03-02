@@ -50,7 +50,7 @@ const handleSubmit = (e) => {
 };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white"   id="contact-section">
     <section className="max-w-7xl mx-auto px-4 py-20">
       {/* Quote Section */}
       <div className="text-center mb-20 max-w-3xl mx-auto">
